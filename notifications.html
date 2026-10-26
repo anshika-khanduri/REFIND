@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block title %}Notifications{% endblock %}
+{% block content %}<div class="page-heading"><div><span class="eyebrow">YOUR UPDATES</span><h1>Notifications</h1><p class="muted">Each user receives a separate alert for a possible match.</p></div></div>
+{% if notifications %}<div class="notice-list large">{% for n in notifications %}<article class="notice"><span class="notice-star">✦</span><div><p>{{ n.message }}</p><small>{{ n.created_at[:16].replace('T',' ') }} · Similarity {{ n.score }}%</small></div></article>{% endfor %}</div>{% else %}<div class="empty"><span>♧</span><h3>All quiet for now</h3><p>When a possible match is found, your notification will appear here.</p></div>{% endif %}{% endblock %}
